@@ -77,7 +77,7 @@ npx lint-staged
 - npm i -D jest @types/jest ts-jest
 - touch jest.config.js
 - define in this file next object
-```
+``` js script
 module.exports = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [
