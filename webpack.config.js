@@ -5,8 +5,8 @@ module.exports = {
   mode: 'development',
   entry: './src/main/index.tsx',
   output: {
-    path: path.join.apply(__dirname, 'public/js'),
-    publicPatch: '/public.js',
+    path: path.join(__dirname, 'public/js'),
+    publicPath: '/public/js',
     filename: 'bundle.js'
   },
   resolve: {
@@ -37,11 +37,12 @@ module.exports = {
   devServer: {
     contentBase: './public',
     writeToDisk: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    open: true
   },
-  external: {
+  externals: {
     react: 'React',
-    'react-dom': 'ReactDom'
+    'react-dom': 'ReactDOM'
   },
   plugins: [
     new CleanWebpackPlugin()
